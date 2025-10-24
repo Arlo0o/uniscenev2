@@ -156,7 +156,7 @@
           <div class="column has-text-centered">
             <div class="publication-links">
               <span class="link-block">
-                <a href="https://arxiv.org/abs/2412.05435"
+                <a href="https://arxiv.org/abs/"
                    class="external-link button is-normal is-rounded is-dark">
                   <span class="icon">
                       <i class="fas fa-file-alt"></i>
@@ -164,19 +164,10 @@
                   <span>Arxiv</span>
                 </a>
               </span> -->
-              <!-- Video Link. -->
-              <!-- <span class="link-block">
-                <a href="https://www.youtube.com/watch?v=MrKrnHhk8IA"
-                   class="external-link button is-normal is-rounded is-dark">
-                  <span class="icon">
-                      <i class="fab fa-youtube"></i>
-                  </span>
-                  <span>Video</span>
-                </a>
-              </span> -->
+            
               <!-- Code Link. -->
               <!-- <span class="link-block">
-                <a href="https://github.com/Arlo0o/UniScene-Unified-Occupancy-centric-Driving-Scene-Generation"
+                <a href="https://github.com/Arlo0o/UniScene-Unified-Occupancy-centric-Driving-Scene-Generation/v2"
                    class="external-link button is-normal is-rounded is-dark">
                   <span class="icon">
                       <i class="fab fa-github"></i>
@@ -184,25 +175,15 @@
                   <span>Code</span>
                   </a>
               </span>
-              <span class="link-block">
-                <a href="./uniscene/UniScene-arxiv.pdf"
-                   class="external-link button is-normal is-rounded is-dark">
-                  <span class="icon">
-                      <i class="fas fa-file-pdf"></i>
-                  </span>
-                  <span>PDF</span>
-                  </a>
-              </span>
 
-             
            
               <span class="link-block">
-                <a href="https://huggingface.co/Arlolo0/UniScene/tree/main"
+                <a href="https://huggingface.co/datasets/Arlolo0/Nuplan-Occupancy/tree/main"
                    class="external-link button is-normal is-rounded is-dark">
                   <span class="icon">
                     <i class="fas fa-file-download" style="font-size: 1.2em;"></i>
                   </span>
-                  <span>Hugging Face</span>
+                  <span>Dataset</span>
                 </a>
               </span>
                -->
@@ -257,6 +238,9 @@
 
 
 
+
+
+
 <section class="section">
   <div class="container is-max-desktop">
     <!-- Abstract. -->
@@ -265,7 +249,7 @@
         <h2 class="title is-3">Abstract</h2>
         <div class="content has-text-justified">
           <p>
-            Driving scene generation is a critical domain for autonomous driving, enabling downstream applications, including perception and planning evaluation. While occupancy-centric methods have recently achieved state-of-the-art results by offering consistent conditioning across frames and modalities, their performance heavily depends on occupancy annotation data, which remains scarce. To overcome this limitation, we introduce Nuplan-Occ, the largest semantic occupancy dataset to date, constructed from the widely used NuPlan benchmark. Its scale and diversity facilitate not only large-scale generative modeling but also autonomous driving downstream applications. Using this dataset, we develop a unified framework that jointly generates high-quality semantic occupancy, multi-view videos, and LiDAR point clouds at scale. Our approach incorporates a spatio-temporal disentangled architecture to support high-fidelity spatial expansion and temporal forecasting of 4D dynamic occupancy. To bridge modal gaps, we further propose two novel techniques: a Gaussian splatting-based sparse point map rendering strategy that enhances multi-view video generation, and a sensor-aware embedding strategy that explicitly models LiDAR sensor properties for realistic multi-LiDAR simulation. Extensive experiments demonstrate that our method achieves superior fidelity and scalability compared to existing approaches, and validates its practical value in downstream tasks.
+            Driving scene generation is a critical domain for autonomous driving, enabling downstream applications, including perception and planning evaluation. Occupancy-centric methods have recently achieved state-of-the-art results by offering consistent conditioning across frames and modalities; however, their performance heavily depends on annotated occupancy data, which still remains scarce. To overcome this limitation, we curate Nuplan-Occ, the largest semantic occupancy dataset to date, constructed from the widely used Nuplan benchmark. Its scale and diversity facilitate not only large-scale generative modeling but also autonomous driving downstream applications. Based on this dataset, we develop a unified framework that jointly synthesizes high-quality semantic occupancy, multi-view videos, and LiDAR point clouds. Our approach incorporates a spatio-temporal disentangled architecture to support high-fidelity spatial expansion and temporal forecasting of 4D dynamic occupancy. To bridge modal gaps, we further propose two novel techniques: a Gaussian splatting-based sparse point map rendering strategy that enhances multi-view video generation, and a sensor-aware embedding strategy that explicitly models LiDAR sensor properties for realistic multi-LiDAR simulation. Extensive experiments demonstrate that our method achieves superior generation fidelity and scalability compared to existing approaches, and validates its practical value in downstream tasks.
           </p>
         </div>
       </div>
@@ -274,11 +258,50 @@
 <hr>
 
 
+
+
+
 <section class="section">
   <div class="container is-max-desktop">
     <div class="columns is-centered has-text-centered">
       <div class="column is-four-fifths">
-    <h2 class="title is-3">Overview</h2>
+    <h2 class="title is-3">Dataset Curation</h2>
+
+      <center><img src="asserts\dataset_pipeline.png" alt="Teaser" width="100%"></center>
+
+      <div class="content has-text-justified">
+      <p> <b>Nuplan-Occ dataset curation pipeline with the proposed Foreground-Background Separate Aggregate (FBSA) strategy.</b> This strategy is composed of three key components: separated multi-frame point cloud aggregation, neural kernel-based mesh reconstruction, and hybrid semantic labeling.</p>
+      </div>
+
+      <center><img src="asserts\data_vis.png" alt="Teaser" width="100%" height="100%" ></center>
+
+      <div class="content has-text-justified">
+      <p> <b>The Nuplan-Occ provides dense semantic occupancy labels for 10HZ all frames in the Nuplan dataset.</b> Compared with OpenScene, our method demonstrates high resolution (400×400×32) dense annotations with accurate geometry (e.g., clear vehicle structures and smooth road surfaces).</p>
+      </div>
+
+      <center><img src="asserts\data_compare.png" alt="Teaser" width="100%" height="100%" ></center>
+
+      <div class="content has-text-justified">
+      <p> <b>Comparison between Nuplan-Occ and other occupancy/LiDAR datasets.</b> Surrounded represents surround-view image inputs. View means the number of image view inputs. C, D, and L denote camera, depth, and LiDAR, respectively.</p>
+      </div>
+
+    </div>
+  </div>
+  </div>
+</section>
+<hr>
+
+</div>
+</div>
+</section>
+
+
+
+<section class="section">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+    <h2 class="title is-3">Framework Overview</h2>
 
       <center><img src="asserts\overall.png" alt="Teaser" width="100%"></center>
 
@@ -339,42 +362,7 @@
   </div>
 
    
-  <section class="section">
-    <div class="container is-max-desktop">
-      <div class="columns is-centered has-text-centered">
-        <div class="column is-four-fifths">
-      <h2 class="title is-3">Dataset Curation</h2>
-  
-        <center><img src="asserts\dataset_pipeline.png" alt="Teaser" width="100%"></center>
-  
-        <div class="content has-text-justified">
-        <p> <b>Nuplan-Occ dataset curation pipeline with the proposed Foreground-Background Separate Aggregate (FBSA) strategy.</b> This strategy is composed of three key components: separated multi-frame point cloud aggregation, neural kernel-based mesh reconstruction, and hybrid semantic labeling.</p>
-        </div>
-  
-        <center><img src="asserts\data_vis.png" alt="Teaser" width="100%" height="100%" ></center>
-  
-        <div class="content has-text-justified">
-        <p> <b>The Nuplan-Occ provides dense semantic occupancy labels for 10HZ all frames in the Nuplan dataset.</b> Compared with OpenScene, our method demonstrates high resolution (400×400×32) dense annotations with accurate geometry (e.g., clear vehicle structures and smooth road surfaces).</p>
-        </div>
 
-        <center><img src="asserts\data_compare.png" alt="Teaser" width="100%" height="100%" ></center>
-  
-        <div class="content has-text-justified">
-        <p> <b>Comparison between Nuplan-Occ and other occupancy/LiDAR datasets.</b> Surrounded represents surround-view image inputs. View means the number of image view inputs. C, D, and L denote camera, depth, and LiDAR, respectively.</p>
-        </div>
-  
-      </div>
-    </div>
-    </div>
-  </section>
-  <hr>
-
-
-
-
-  </div>
-  </div>
-</section>
 <!-- <hr> -->
 
  
