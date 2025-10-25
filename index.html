@@ -217,13 +217,13 @@
       <div class="column is-four-fifths">
     <!-- <h2 class="title is-3">Teaser</h2> -->
 
-      <center><img src="asserts\teaser.png" alt="Teaser" width="100%"></center>
+      <center><img src="assets\teaser.png" alt="Teaser" width="100%"></center>
 
       <div class="content has-text-justified">
       <p> <b> Overview of Nuplan-Occ dataset and the UniScenev2 pipeline.</b> We introduce the largest semantic occupancy dataset to date, featuring dense 3D semantic annotations that contain ~19× more annotated scenes and ~18× more frames than Nuscenes-Occupancy. Facilitated with Nuplan-Occ, UniScenev2 scales up both model architecture and training data to enable high-quality occupancy expansion and forecasting, occupancy-based sparse point map condition for video generation, and sensor-specific LiDAR generation.</p>
       </div>
 
-      <center><img src="asserts\teaser2.png" alt="Teaser" width="100%" height="100%" ></center>
+      <center><img src="assets\teaser2.png" alt="Teaser" width="100%" height="100%" ></center>
 
       <div class="content has-text-justified">
       <p> <b>Visualization of scene expansion and forecasting results.</b> UniScenev2 enables spatio-temporally disentangled generation, supporting both large-scale spatial expansion and future occupancy sequence prediction, while jointly producing multi-view video and LiDAR data in a unified pipeline.</p>
@@ -267,19 +267,19 @@
       <div class="column is-four-fifths">
     <h2 class="title is-3">Dataset Curation</h2>
 
-      <center><img src="asserts\dataset_pipeline.png" alt="Teaser" width="100%"></center>
+      <center><img src="assets\dataset_pipeline.png" alt="Teaser" width="100%"></center>
 
       <div class="content has-text-justified">
       <p> <b>Nuplan-Occ dataset curation pipeline with the proposed Foreground-Background Separate Aggregate (FBSA) strategy.</b> This strategy is composed of three key components: separated multi-frame point cloud aggregation, neural kernel-based mesh reconstruction, and hybrid semantic labeling.</p>
       </div>
 
-      <center><img src="asserts\data_vis.png" alt="Teaser" width="100%" height="100%" ></center>
+      <center><img src="assets\data_vis.png" alt="Teaser" width="100%" height="100%" ></center>
 
       <div class="content has-text-justified">
       <p> <b>The Nuplan-Occ provides dense semantic occupancy labels for 10HZ all frames in the Nuplan dataset.</b> Compared with OpenScene, our method demonstrates high resolution (400×400×32) dense annotations with accurate geometry (e.g., clear vehicle structures and smooth road surfaces).</p>
       </div>
 
-      <center><img src="asserts\data_compare.png" alt="Teaser" width="100%" height="100%" ></center>
+      <center><img src="assets\data_compare.png" alt="Teaser" width="100%" height="100%" ></center>
 
       <div class="content has-text-justified">
       <p> <b>Comparison between Nuplan-Occ and other occupancy/LiDAR datasets.</b> Surrounded represents surround-view image inputs. View means the number of image view inputs. C, D, and L denote camera, depth, and LiDAR, respectively.</p>
@@ -303,7 +303,7 @@
       <div class="column is-four-fifths">
     <h2 class="title is-3">Framework Overview</h2>
 
-      <center><img src="asserts\overall.png" alt="Teaser" width="100%"></center>
+      <center><img src="assets\overall.png" alt="Teaser" width="100%"></center>
 
       <div class="content has-text-justified">
       <p><b>Overall framework of UniScenev2.</b> The joint generation process facilitates large-scale dynamic generation with an occupancy-centric hierarchy: I. Dynamic Large-scale Occupancy Generation. The optional BEV layout is concatenated with the noise volume before being fed into the occupancy spatial diffusion transformer, and decoded with the occupancy VAE decoder to generate large-scale occupancy grids. A selected occupancy scene is processed by the occupancy temporal diffusion transformer for forecasting temporal occupancy sequences. II. Occupancy-based Multi-view Video and LiDAR Generation. The occupancy is converted into 3D Gaussians and rendered into sparse semantic and depth point maps, which guide the video generation with a video diffusion transformer. The output is obtained from the video VAE decoder. For LiDAR generation, the sparse LiDAR UNet takes occupancy grids and sensor rig data as inputs, which are then passed to the LiDAR head for multi-view LiDAR generation.</p>
@@ -337,7 +337,7 @@
     </div> -->
     <center>
       <video id="teaser" autoplay controls muted loop width="100%">
-        <source src="./asserts/demo_nuplan1.mp4" type="video/mp4">
+        <source src="./assets/demo_nuplan1.mp4" type="video/mp4">
       </video>
       </center>
 
@@ -354,7 +354,7 @@
     </div> -->
     <center>
       <video id="teaser" autoplay controls muted loop width="100%">
-        <source src="./asserts/demo_lx1.mp4" type="video/mp4">
+        <source src="./assets/demo_lx1.mp4" type="video/mp4">
       </video>
       </center>
 
